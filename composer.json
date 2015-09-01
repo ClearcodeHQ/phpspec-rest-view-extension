@@ -1,0 +1,30 @@
+{
+    "name": "codifico/phpspec-rest-view-extension",
+    "type": "phpspec-extension",
+    "description": "REST View matcher",
+    "keywords": ["codifico", "phpspec", "bdd", "rest", "matcher"],
+    "homepage": "http://codifico.pl",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcin Dryka",
+            "email": "marcin@codifico.pl"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.4",
+        "phpspec/phpspec": "~2.0"
+    },
+
+    "require-dev": {
+    },
+
+    "autoload": {
+        "psr-4": { "Codifico\\PhpSpec\\RestViewExtension\\": "src/" }
+    },
+
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
