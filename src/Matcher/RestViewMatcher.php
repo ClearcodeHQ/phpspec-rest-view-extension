@@ -3,9 +3,8 @@
 namespace Codifico\PhpSpec\RestViewExtension\Matcher;
 
 use Codifico\PhpSpec\RestViewExtension\Serializer\PropertyMetadataFake;
-use Coduo\PHPMatcher\Factory\SimpleFactory;
+use Coduo\PHPMatcher\Factory;
 use FOS\RestBundle\View\View;
-use JMS\Serializer\Metadata\PropertyMetadata;
 use PhpSpec\Exception\Example\FailureException;
 use PhpSpec\Formatter\Presenter\PresenterInterface;
 use PhpSpec\Matcher\BasicMatcher;
@@ -17,18 +16,24 @@ class RestViewMatcher extends BasicMatcher
      */
     private $presenter;
 
-    /** @var \Coduo\PHPMatcher\Matcher */
+    /**
+     * @var \Coduo\PHPMatcher\Matcher
+     */
     private $matcher;
 
+    /**
+     * @var FailureException
+     */
     private $exception;
 
     /**
      * @param PresenterInterface $presenter
+     * @param Factory $factory
      */
-    public function __construct(PresenterInterface $presenter)
+    public function __construct(PresenterInterface $presenter, Factory $factory)
     {
         $this->presenter = $presenter;
-        $this->matcher = (new SimpleFactory())->createMatcher();
+        $this->matcher = $factory->createMatcher();
     }
 
     /**
