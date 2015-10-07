@@ -1,0 +1,16 @@
+filter:
+    excluded_paths:
+        - 'spec/*'
+checks:
+    php: true
+coding_style:
+    php:
+        indentation:
+            general:
+                size: 1
+        spaces:
+            within:
+                brackets: true
+tools:
+    php_cs_fixer:
+        enabled: true
